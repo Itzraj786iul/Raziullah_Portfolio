@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "backend-contact-form/server.js", "use": "@vercel/node" },
+    { "src": "public/**/*", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/contact", "dest": "/backend-contact-form/server.js" },
+    { "src": "/(.*)", "dest": "/public/$1" }
+  ]
+}
